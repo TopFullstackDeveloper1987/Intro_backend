@@ -1,18 +1,18 @@
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose';
 import { app } from './app';
-import config from './config/config';
+// import config from './config/config';
 import logger from './config/logger';
 
 const main = async (): Promise<void> => {
-  mongoose.set('strictQuery', true);
-  await mongoose
-    .connect(config.mongoose.url)
-    .then(() => {
-      console.log('--database connection successful--');
-    })
-    .catch((err) => {
-      console.log('--error connecting to database---', err);
-    });
+  // mongoose.set('strictQuery', true);
+  // await mongoose
+  //   .connect(config.mongoose.url)
+  //   .then(() => {
+  //     console.log('--database connection successful--');
+  //   })
+  //   .catch((err) => {
+  //     console.log('--error connecting to database---', err);
+  //   });
 
   const server = app.listen(process.env.PORT, () => {
     logger.info(`Listening to port ${process.env.PORT}`);
